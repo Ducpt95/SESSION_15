@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESSION 15</title>
+</head>
+<body>
+    <script>
+        // Tạo lớp hình chữ nhật có các properties: rộng, cao, f diện tích, f chu vi
+       function rec(width, height, area, perimeter) {
+        this.width = width,
+        this.height = height,
+        this.area = function area() { return this.width*this.height} /* trả giá trị bằng return để tránh console.log undefined */
+        this.perimeter = function perimeter() { return ((this.width+this.height)*2)}
+       }
+       
+       let rec1 = new rec (12,6); /*Tạo đối tượng hình chữ nhật 1 và truyền parameters*/
+       console.log("Rectangle1 ", rec1);
+       console.log("The area of the rectangle 1 is ",rec1.area()); 
+       console.log("The perimeter of the rectangle 1 is ", rec1.perimeter());
+       rec1.width = 6; /*Thay đổi chiều rộng hình chữ nhật 1 */
+       rec1.height = 3; /*Thay đổi chiều cao hình chữ nhật 1 */
+       console.log("The new area of the rectangle 1 is ",rec1.area()); /*Diện tích mới */
+       console.log("The new perimeter of the rectangle 1 is ", rec1.perimeter()); /*Chu vi mới */
+       let rec2 = new rec (24,12); /* Tạo đối tượng hình chữ nhật 2 và truyền parameters */
+       console.log("Rectangle2", rec2);
+       console.log("The area of the rectangle 2 is ", rec2.area());
+       console.log("The perimeter of the rectangle 2 is ", rec2.perimeter());
+       rec2.width = 60; /*Thay đổi chiều rộng hình chữ nhật 2*/
+       rec2.height = 30; /*Thay đổi chiều cao hình chữ nhật */
+       console.log("The new area of the rectangle 2 is ", rec2.area());
+       console.log("The new perimeter of the rectangle 2 is ", rec2.perimeter());
+
+    </script>
+    <canvas id="canvas_rectangle1" width="300" height="200" style="border:5px solid black;"></canvas>
+    <canvas id="canvas_rectangle2" width="300" height="200" style="border:5px solid black;"></canvas>
+
+    <script> /* Vẽ hình chữ nhật bằng Canvas */
+        let canvasRec = document.getElementById("canvas_rectangle1");
+        let cRec = myCan.getContext("2d");
+        myRec.fillStyle = 'red';
+        myRec.fillRect(25,25,250,150);
+    </script>
+    
+    <script> /* Vẽ hình bằng Canvas */
+        let canvasImg = document.getElementById('canvas_rectangle2');
+        let context = canvasImg.getContext('2d');
+        let imgCan = new Image();
+        imgCan.onload = function () {
+            context.drawImage(imgCan, 0, 0);
+        };
+        imgCan.src = 'https://www.farmersalmanac.com/wp-content/uploads/2021/04/forget-me-not-flower-as309740666.jpeg';
+        
+    </script>
+</body>
+</html>
