@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function temperature(C,CtoF,CtoK) {
+            this.C = C,
+            this.toF = function(){ return this.C*(9/5) + 32},
+            this.toK = function(){ return this.C + 273.15}
+        };
+
+        let getTemp = new temperature(25);
+        console.log("The temperature converted into Farenheit Degree is "+getTemp.toF());
+        console.log("The temperature converted in to Kenvin Degree is "+getTemp.toK());
+
+
+    </script>
+</body>
+</html>
